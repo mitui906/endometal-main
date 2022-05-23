@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link type="text/css" rel="stylesheet" href="./stylesheets/sanitize.css">
+    <link type="text/css" rel="stylesheet" href="./stylesheets/style.css">
+    <script src="./js/menuBar.js"></script>
+    <script src="./js/tabContent.js"></script>
+    <script src="./js/checked.js"></script>
+
+
+</head>
+
+<body class="body">
+    <%- include('./header') %>
+
+        <div class="fontSizeS">
+
+            <div class="processWrap">
+
+                <div class="dottedBox">
+                    <div class="dottedBoxTitle">処理モード</div>
+
+                    <label class="dottedBoxLabel">
+                        <input type="radio" id="entry" name="drone" value="1" class="dottedBoxRadio" checked>
+                        <span class="dottedBoxText">登録</span>
+                    </label>
+
+                    <label class="dottedBoxLabel">
+                        <input type="radio" id="retouch" name="drone" value="2" class="dottedBoxRadio">
+                        <span class="dottedBoxText">修正</span>
+                    </label>
+
+                    <label class="dottedBoxLabel">
+                        <input type="radio" id="delete" name="drone" value="3" class="dottedBoxRadio">
+                        <span class="dottedBoxText">削除</span>
+                    </label>
+
+                </div>
+
+                <table class="tableSet">
+                    <tr>
+                        <th>
+                            現場コード
+                        </th>
+                        <td>
+                            <input class="input8" type="text" id="renban">
+                            <button type="submit" class="btn"><img src="./images/arrow.png"></button>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <!-- /processWrap -->
+
+            <div class="tabWrap">
+
+                <div class="tabSet">
+                    <input id="tab01" type="radio" name="TAB" class="tabSwitch" checked="checked" />
+                    <label class="tabLabel" for="tab01">基本情報</label>
+                    <input id="tab02" type="radio" name="TAB" class="tabSwitch" />
+                    <label class="tabLabel" for="tab02">詳細情報</label>
+                    <input id="tab03" type="radio" name="TAB" class="tabSwitch" />
+                    <label class="tabLabel" for="tab03">封筒ラベル</label>
+                    <span></span>
+                </div>
+
+                <div class="tabContent activeCnt">
+                    <!-- tabContent1 start -->
+                    <div class="flex">
+
+                        <div class="genbaTableItem-left">
+                            <table class="tableSet">
+                                <tr>
+                                    <th>現場名１</th>
+                                    <td><input class="input40" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>現場名２</th>
+                                    <td><input class="input40" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>配車用略称</th>
+                                    <td><input class="input34" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>索引</th>
+                                    <td><input class="input6" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>郵便番号</th>
+                                    <td><input class="input8" type="text" name="postal-code" autocomplete="postal-code" /></td>
+                                </tr>
+                                <tr>
+                                    <th>住所１</th>
+                                    <td><input class="input32" type="text" name="street-address" autocomplete="street-address" /></td>
+                                </tr>
+                                <tr>
+                                    <th>住所２</th>
+                                    <td><input class="input32" type="text" name="street-address" autocomplete="street-address" /></td>
+                                </tr>
+                                <tr>
+                                    <th>住所３</th>
+                                    <td><input class="input32" type="text" name="street-address" autocomplete="street-address" /></td>
+                                </tr>
+                                <tr>
+                                    <th>電話番号</th>
+                                    <td><input class="input13" type="text" name="tel" autocomplete="tel" /></td>
+                                </tr>
+                                <tr>
+                                    <th>ＦＡＸ番号</th>
+                                    <td><input class="input13" type="text" name="tel" autocomplete="tel" /></td>
+                                </tr>
+                                <tr>
+                                    <th>仕入先コード</th>
+                                    <td><input class="input3" type="text" name="number" autocomplete="number" /><span class="tdSpan">大立工業株式会社</span></td>
+                                </tr>
+                                <tr>
+                                    <th>方面コード</th>
+                                    <td><input class="input2" type="text" name="number" autocomplete="number" /><span class="tdSpan">新宿区（東京都）</span></td>
+                                </tr>
+                                <tr>
+                                    <th>現場分類コード</th>
+                                    <td><input class="input2" type="text" name="number" autocomplete="number" /><span class="tdSpan">現場</span></td>
+                                </tr>
+                                <tr>
+                                    <th>営業所コード</th>
+                                    <td><input class="input2" type="text" name="number" autocomplete="number" /><span class="tdSpan">本社</span></td>
+                                </tr>
+                            </table>
+
+                            <div class="blank"></div>
+
+                            <table class="tableSet">
+                                <tr>
+                                    <th>相手先担当者１</th>
+                                    <td><input class="input32" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>連絡先１</th>
+                                    <td><input class="input13" type="text" name="tel" autocomplete="tel" /></td>
+                                </tr>
+                                <tr>
+                                    <th>相手先担当者２</th>
+                                    <td><input class="input32" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>連絡先２</th>
+                                    <td><input class="input13" type="text" name="tel " autocomplete="tel " /></td>
+                                </tr>
+                                <tr>
+                                    <th>相手先担当者３</th>
+                                    <td><input class="input32" type="text" name="name " /></td>
+                                </tr>
+                                <tr>
+                                    <th>連絡先３</th>
+                                    <td><input class="input13" type="text" name="tel" autocomplete="tel" /></td>
+                                </tr>
+                                <tr>
+                                    <th>相手先担当者４</th>
+                                    <td><input class="input32" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>連絡先４</th>
+                                    <td><input class="input13" type="text" name="tel " autocomplete="tel " /></td>
+                                </tr>
+                                <tr>
+                                    <th>相手先担当者５</th>
+                                    <td><input class="input32" type="text" name="name " /></td>
+                                </tr>
+                                <tr>
+                                    <th>連絡先５</th>
+                                    <td><input class="input13" type="text" name="tel" autocomplete="tel" /></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <!-- /genbaTableItem-left -->
+
+                        <div class="genbaTableItem-right">
+
+                            <table class="tableSet">
+                                <tr>
+                                    <th>備考１</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考２</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考３</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考４</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考５</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考６</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考７</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考８</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考９</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>備考１０</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>参照備考１</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>参照備考２</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>参照備考３</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>参照備考４</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+                                <tr>
+                                    <th>参照備考５</th>
+                                    <td><input class="input70" type="text" name="name" /></td>
+                                </tr>
+
+                            </table>
+
+                            <div class="blank"></div>
+
+                            <div class="flex">
+
+                                <div class="tableBRChild">
+
+                                    <table class="tableSet">
+                                        <tr>
+                                            <th>産廃区分</th>
+                                            <td>
+                                                <select>
+													<option value="0">0:通常</option>
+													<option value="1">1:産廃</option>
+												</select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>指定内容</th>
+                                            <td>
+                                                <input class="input8" type="text" name="name" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input class="input8" type="text" name="name" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input class="input8" type="text" name="name" />
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                                <!-- tableBRChild end -->
+
+                                <div class="tableBRChild">
+
+                                    <table class="tableSet">
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>持参物</th>
+                                            <td><input class="input8" type="text" name="name" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input class="input8" type="text" name="name" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input class="input8" type="text" name="name" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input class="input8" type="text" name="name" /></td>
+                                        </tr>
+
+                                    </table>
+
+                                </div>
+                                <!-- tableBRChild end -->
+                            </div>
+                        </div>
+                        <!-- /genbaTableItem-right -->
+
+                    </div>
+
+                    <div class="nextBtn btn">次へ</div>
+
+                </div>
+                <!-- tabContent1 end -->
+
+                <div class="tabContent">
+                    <!-- tabContent2 start -->
+                    <table class="tableSet">
+                        <tr>
+                            <th id="thColor">詳細情報</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>消費税計算区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:外税</option>
+                                    <option value="1">1:内税</option>
+                                    <option value="2">2:内税</option>
+                                    <option value="3">3:両方</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>単価　処理単位</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:0.1円未満</option>
+                                    <option value="1">1:1円未満</option>
+                                    <option value="2">2:10円未満</option>
+                                    <option value="3">3:100円未満</option>
+                                    <option value="4">4:1000円未満</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>単価　処理区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:切捨</option>
+                                    <option value="1">1:切上</option>
+                                    <option value="2">2:四捨五入</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>金額　処理単位</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:0.1円未満</option>
+                                    <option value="1">1:1円未満</option>
+                                    <option value="2">2:10円未満</option>
+                                    <option value="3">3:100円未満</option>
+                                    <option value="4">4:1000円未満</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>金額　処理区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:切捨</option>
+                                    <option value="1">1:切上</option>
+                                    <option value="2">2:四捨五入</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>消費税　処理単位</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:0.1円未満</option>
+                                    <option value="1">1:1円未満</option>
+                                    <option value="2">2:10円未満</option>
+                                    <option value="3">3:100円未満</option>
+                                    <option value="4">4:1000円未満</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>消費税　処理区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:切捨</option>
+                                    <option value="1">1:切上</option>
+                                    <option value="2">2:四捨五入</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考１</th>
+                            <td><input class="input70" class="input70" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考２</th>
+                            <td><input class="input70" class="input70" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>マスター検索表示区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:表示する</option>
+                                    <option value="1">1:表示しない</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="blank"></div>
+
+                    <table class="tableSet">
+                        <tr>
+                            <th id="thColor">定期便情報</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>作成単位</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:通常</option>
+                                    <option value="1">1:曜日</option>
+                                    <option value="2">2:毎月</option>
+                                    <option value="3">3:1週目</option>
+                                    <option value="4">4:2週目</option>
+                                    <option value="5">5:3週目</option>
+                                    <option value="6">6:4週目</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>作成日</th>
+                            <td class="singlecheck">
+                                <input type="text" class="input2"><span>日</span><span></span>
+                                <label for="check1" class="checkBox">
+                                    <input type="checkbox" name="designate" id="weekBox1" value="1" checked="checked" onclick="weekBox(this)"><span>月</span>
+                                </label>
+                                <label for="check1" class="checkBox">
+                                    <input type="checkbox" name="designate" id="weekBox2" value="2" onclick="weekBox(this)" ><span>火</span>
+                                </label>
+                                <label for="check1" class="checkBox">
+                                    <input type="checkbox" name="designate" id="weekBox3" value="3" onclick="weekBox(this)" ><span>水</span>
+                                </label>
+                                <label for="check1" class="checkBox">
+                                    <input type="checkbox" name="designate" id="weekBox4" value="4" onclick="weekBox(this)" ><span>木</span>
+                                </label>
+                                <label for="check1" class="checkBox">
+                                    <input type="checkbox" name="designate" id="weekBox5" value="5" onclick="weekBox(this)" ><span>金</span>
+                                </label>
+                                <label for="check1" class="checkBox">
+                                    <input type="checkbox" name="designate" id="weekBox6" value="6" onclick="weekBox(this)" ><span>土</span>
+                                </label>
+                                <label for="check1" class="checkBox">
+                                    <input type="checkbox" name="designate" id="weekBox7" value="7" onclick="weekBox(this)" ><span>日</span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>有効期間</th>
+                            <td>
+                                <input class="input3" type="number" value="2022" min="2000" max="3000" step="1"><span>年</span>
+                                <input class="input2-3" type="number" value="1" min="1" max="12" step="1"><span>月</span>
+                                <input class="input2-3" type="number" value="1" min="1" max="31" step="1"><span>日</span>
+                                <span>～</span>
+                                <input class="input3" type="number" value="2022" min="2000" max="3000" step="1"><span>年</span>
+                                <input class="input2-3" type="number" value="1" min="1" max="12" step="1"><span>月</span>
+                                <input class="input2-3" type="number" value="1" min="1" max="31" step="1"><span>日</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="blank"></div>
+
+                    <div class="flex">
+                        <table class="tableSet">
+                            <tr>
+                                <th>引取時間</th>
+                                <td><input class="input16" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="input16" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>追加</th>
+                                <td>
+                                    <div class="dottedBox2">
+                                        <label class="dottedBoxLabel2">
+                                            <input type="radio" id="zero" name="drone" value="1" class="dottedBoxRadio2" checked>
+                                            <span class="dottedBoxText2">なし</span>
+                                        </label>
+                                        <label class="dottedBoxLabel2">
+                                            <input type="radio" id="today" name="drone" value="2" class="dottedBoxRadio2">
+                                            <span class="dottedBoxText2">当日</span>
+                                        </label>
+                                        <label class="dottedBoxLabel2">
+                                            <input type="radio" id="evening" name="drone" value="3" class="dottedBoxRadio2">
+                                            <span class="dottedBoxText2">夕方</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>相手先担当者１</th>
+                                <td><input class="input32" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>連絡先１</th>
+                                <td><input class="input13" type="text" name="tel" autocomplete="tel" /></td>
+                            </tr>
+                            <tr>
+                                <th>相手先備考１</th>
+                                <td><input class="input32" type="text" name="tel" autocomplete="tel" /></td>
+                            </tr>
+                            <tr>
+                                <th>相手先担当者２</th>
+                                <td><input class="input32" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>連絡先２</th>
+                                <td><input class="input13" type="text" name="tel" autocomplete="tel" /></td>
+                            </tr>
+                            <tr>
+                                <th>相手先備考２</th>
+                                <td><input class="input32" type="text" name="tel" autocomplete="tel" /></td>
+                            </tr>
+                        </table>
+
+                        <table class="tableSet">
+                            <tr>
+                                <th>引取内容</th>
+                                <td><input class="input70" class="input70" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="input70" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="input70" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>Ｐ</th>
+                                <td><input class="input14" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="input14" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="input14" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="nextBtn btn">次へ</div>
+
+                </div>
+                <!-- tabContent2 end -->
+
+                <div class="tabContent">
+                    <!-- tabContent3 start -->
+                    <div class="flex">
+                        <table class="tableSet">
+                            <tr>
+                                <th id="thColor">郵送用１</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>郵便番号</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>住所１</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>住所２</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>住所３</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>仕入先名</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>担当者名</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                        </table>
+
+                        <table class="tableSet">
+                            <tr>
+                                <th id="thColor">郵送用１</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>郵便番号</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>住所１</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>住所２</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>住所３</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>仕入先名</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>担当者名</th>
+                                <td><input class="input40" type="text" name="name" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- /upper -->
+
+                    <div class="blank"></div>
+
+                    <div class="flex">
+                        <table class="tableSet">
+                            <tr>
+                                <th id="thColor">社内用</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>処理連番・枝番</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>処理連番・枝番</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>仕切用仕入先名</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>仕切用仕入先名</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>仕入先名</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>仕入先名</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>現場名１</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>現場名１</span></label>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>（マスタ）</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>現場名２</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>現場名２</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>仕切用担当者</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>仕切用担当者</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>引取日</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>引取日</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>金額</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>金額</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                        </table>
+
+                        <table class="tableSet">
+                            <tr>
+                                <th id="thColor">持出用</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>住所１</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>住所１</span></label>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>（マスタ）</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>住所２</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>住所２</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>現場名１</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>現場名１</span></label>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>（マスタ）</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>現場名２</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>現場名２</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>仕入先名</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>仕入先名</span></label>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>（マスタ）</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>仕切用担当者</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>仕切用担当者</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>仕切用連絡先</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>仕切用連絡先</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>引取日</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>引取日</span></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>金額</th>
+                                <td>
+                                    <label for="check1" class="checkBox"><input type="checkbox" name="" id="check1"><span>金額</span></label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- /under -->
+
+                </div>
+                <!-- tabContent3 end -->
+
+            </div>
+            <!-- /tabWrap -->
+
+        </div>
+
+        <div class="right">
+            <button type="submit" class="btn"><img src="./images/exeBtn.png"><span class="exeBtn">実行</span></button>
+        </div>
+
+        <%- include('./footer') %>
+</body>
+
+</html>

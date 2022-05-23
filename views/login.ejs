@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link type="text/css" rel="stylesheet" href="./stylesheets/sanitize.css">
+    <link type="text/css" rel="stylesheet" href="./stylesheets/style.css">
+</head>
+
+<body class="body">
+
+    <form name="loginForm" method="POST" action="./login" class="loginForm">
+
+        <p><%= message %></p>
+        <table>
+            <tr>
+                <th>ID</th>
+                <td><input type="id" name="userId"></td>
+            </tr>
+            <tr>
+                <th>パスワード</th>
+                <td><input type="password" name="password"></td>
+            </tr>
+        </table>
+
+        <div class="right">
+            <input type="submit" value="ログイン" class="loginBtn">
+        </div><!-- /login -->
+
+    </form>
+
+</body>
+
+</html>

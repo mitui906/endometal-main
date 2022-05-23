@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>メインメニュー</title>
+	<link type="text/css" rel="stylesheet" href="./stylesheets/sanitize.css">
+	<link type="text/css" rel="stylesheet" href="./stylesheets/style.css">
+	<script src="./js/menuTab.js"></script>
+	<script src="./js/menuBtn.js"></script>
+	<script src="./js/logout.js"></script>
+</head>
+
+<body class="body">
+	<%- include('./headerTop') %>
+
+	<div class="blank"></div>
+	<div class="mainwrapper">
+
+		<div class="main">
+			<div class="mainTab">
+				<div class="tabBtn"><img src="./images/common.png">共通</div>
+				<div class="tabBtn"><img src="./images/cti.png">CTI</div>
+				<div class="tabBtn"><img src="./images/cab.png">CAB</div>
+				<div class="tabBtn-on"><img src="./images/pcm.png">仕入配車管理システム</div>
+				<div class="tabBtn"><img src="./images/setting.png">会社設定</div>
+			</div>
+
+			<%- include(menuTabs) %>
+
+			<form name="jumpForm" method="post" action="移動したいページのパス">
+				<input type="hidden" name="jumpPass" value="移動したいページのパス">
+				<input type="hidden" name="jumpPass2" value="移動したいページのパス2">
+			</form>
+
+		</div><!-- /main -->
+
+		<div class="sub">
+			<div class="subItem">
+				<h3>お知らせ</h3>
+				<div class="btn">メッセージを送信</div>
+			</div><!-- /subitem -->
+			<div class="oshirase">
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+				<p>2022/05/01&emsp;12:00<br>&emsp;X--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--XX--(10)--X</p>
+			</div><!-- /oshirase -->
+		</div><!-- /sub -->
+	</div><!-- /mainwrapper -->
+</body>
+
+</html>

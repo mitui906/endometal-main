@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link type="text/css" rel="stylesheet" href="./stylesheets/sanitize.css">
+    <link type="text/css" rel="stylesheet" href="./stylesheets/style.css">
+    <script src="./js/menuBar.js"></script>
+    <script src="./js/tabContent.js"></script>
+    <script src="./js/checked.js"></script>
+
+
+</head>
+
+<body class="body">
+    <%- include('./header') %>
+
+    <div class="fontSizeS">
+
+        <div class="processWrap">
+
+            <div class="dottedBox">
+                <div class="dottedBoxTitle">処理モード</div>
+
+                <label class="dottedBoxLabel">
+                    <input type="radio" id="entry" name="drone" value="1" class="dottedBoxRadio" checked>
+                    <span class="dottedBoxText">登録</span>
+                </label>
+
+                <label class="dottedBoxLabel">
+                    <input type="radio" id="retouch" name="drone" value="2" class="dottedBoxRadio">
+                    <span class="dottedBoxText">修正</span>
+                </label>
+
+                <label class="dottedBoxLabel">
+                    <input type="radio" id="delete" name="drone" value="3" class="dottedBoxRadio">
+                    <span class="dottedBoxText">削除</span>
+                </label>
+
+            </div>
+
+            <table class="tableSet">
+                <tr>
+                    <th>
+                        仕入先コード
+                    </th>
+                    <td>
+                        <input class="input6" type="text" id="renban">
+                        <button type="submit" class="btn"><img src="./images/arrow.png"></button>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <!-- /processWrap -->
+
+        <div class="tableContent">
+            <!-- tableContent start -->
+
+            <div class="flex">
+                <div class="block">
+                    <table class="tableSet">
+                        <tr>
+                            <th id="thColor">基本情報</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>仕入先名</th>
+                            <td><input class="input32" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>配車用略称</th>
+                            <td><input class="input24" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕入先索引</th>
+                            <td><input class="input6" type="text" name="name" /></td>
+                        </tr>
+                    </table>
+                    <!-- table1 -->
+
+                    <table class="tableSet">
+                        <tr>
+                            <th id="thcolor">詳細情報</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>消費税計算区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:外税</option>
+                                    <option value="1">1:内税</option>
+                                    <option value="2">2:内税</option>
+                                    <option value="3">3:両方</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>単価処理単位</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:0.1円未満</option>
+                                    <option value="1">1:1円未満</option>
+                                    <option value="2">2:10円未満</option>
+                                    <option value="3">3:100円未満</option>
+                                    <option value="4">4:1000円未満</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>単価処理区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:切捨</option>
+                                    <option value="1">1:切上</option>
+                                    <option value="2">2:四捨五入</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>金額処理単位</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:0.1円未満</option>
+                                    <option value="1">1:1円未満</option>
+                                    <option value="2">2:10円未満</option>
+                                    <option value="3">3:100円未満</option>
+                                    <option value="4">4:1000円未満</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>金額処理区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:切捨</option>
+                                    <option value="1">1:切上</option>
+                                    <option value="2">2:四捨五入</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>消費税処理単位</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:0.1円未満</option>
+                                    <option value="1">1:1円未満</option>
+                                    <option value="2">2:10円未満</option>
+                                    <option value="3">3:100円未満</option>
+                                    <option value="4">4:1000円未満</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>消費税処理区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:切捨</option>
+                                    <option value="1">1:切上</option>
+                                    <option value="2">2:四捨五入</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>マスター検索処理区分</th>
+                            <td>
+                                <select>
+                                    <option value="0">0:表示する</option>
+                                    <option value="1">1:表示しない</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- table2 -->
+
+                    <table class="tableSet">
+                        <tr>
+                            <th id="thColor">本社</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>備考１</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>備考２</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>備考３</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考１</th>
+                            <td><input class="input70" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考２</th>
+                            <td><input class="input70" type="text" name="name" /></td>
+                        </tr>
+                    </table>
+                    <!-- table3 -->
+                </div>
+                <!-- /blockLeft -->
+
+                <div class="block">
+                    <table class="tableSet">
+                        <tr>
+                            <th id="thColor">中部支社</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>備考１</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>備考２</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>備考３</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考１</th>
+                            <td><input class="input70" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考２</th>
+                            <td><input class="input70" type="text" name="name" /></td>
+                        </tr>
+                    </table>
+                    <!-- table4 -->
+
+                    <table class="tableSet">
+                        <tr>
+                            <th id="thColor">
+                                東北支社</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>備考１</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>備考２</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>備考３</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考１</th>
+                            <td><input class="input70" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考２</th>
+                            <td><input class="input70" type="text" name="name" /></td>
+                        </tr>
+                    </table>
+                    <!-- table5 -->
+
+
+                    <table class="tableSet">
+                        <tr>
+                            <th id="thColor">
+                                関西支社</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>備考１</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>備考２</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>備考３</th>
+                            <td><input class="input20" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考１</th>
+                            <td><input class="input70" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>仕切備考２</th>
+                            <td><input class="input70" type="text" name="name" /></td>
+                        </tr>
+                    </table>
+                    <!-- table6 -->
+                </div>
+                <!-- /blockRight -->
+            </div>
+
+            <div class="right">
+                <button type="submit" class="btn"><img src="./images/exeBtn.png"><span class="exeBtn">実行</span></button>
+            </div>
+
+        </div>
+        <!-- tableContent end -->
+
+    </div>
+    <!-- /fontSizeS -->
+
+    <%- include('./footer') %>
+</body>
+
+</html>

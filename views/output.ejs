@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<link type="text/css" rel="stylesheet" href="./stylesheets/sanitize.css">
+	<link type="text/css" rel="stylesheet" href="./stylesheets/style.css">
+	<script src="./js/menuBar.js"></script>
+	<script src="./js/calendar.js"></script>
+
+</head>
+
+<body class="body">
+	<%- include('./header') %>
+
+	<div class="container">
+
+		<div class="outputBar">
+			<div class="outputBarItem flex">
+				条件パターン(C)
+				<select>
+					<option>標準（規定）</option>
+					<option>-- 1 --</option>
+					<option>-- 2 --</option>
+				</select>
+				<div><img src="./images/save.png">保存(S)</div>
+				<div><img src="./images/delete.png">削除(D)</div>
+			</div>
+		</div>
+
+		<div class="outputBody flex">
+
+			<div class="outputBody-left">
+
+				<div class="tabSetOutput">
+					<input id="tab01" type="radio" name="TAB" class="tabSwitch" checked="checked" />
+					<label class="tabLabel" for="tab01">出力条件</label>
+					<input id="tab02" type="radio" name="TAB" class="tabSwitch" />
+					<label class="tabLabel" for="tab02">項目選択</label>
+					<span></span>
+				</div>
+
+				<div class="tabContentOutput activeCnt">
+					<div class="inBox">
+						<span class="inBoxTitle"><%= type %>コードの範囲</span>
+						<input type="checkbox" id="selectAll">
+						<label for="selectAll">全件</label>
+						<input class="input6" type="text" maxlength="6" placeholder="000000">
+						<select class="inboxSelect">
+							<option>から</option>
+							<option></option>
+							<option></option>
+						</select>
+						<input class="input6" type="text" maxlength="6" placeholder="999999">
+					</div>
+
+					<div class="outputBody-in"></div>
+
+					<div class="inBox">
+						<span class="inBoxTitle">出力ファイルの設定</span>
+						<table class="tableSet">
+							<tr>
+								<th>フォルダ</th>
+								<td colspan="6"><input class="input100" type="text"></td>
+							</tr>
+							<tr>
+								<th>ファイル名</th>
+								<td colspan="4" class="td15"><input class="input90" type="text"><span class="btn">...</span></td>
+								<th>タイトル出力</th>
+								<td class="td5">
+									<select>
+										<option>有り</option>
+										<option>無し</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>レコード長</th>
+								<td class="td5">
+									<select>
+										<option>可変長</option>
+										<option></option>
+									</select>
+								</td>
+								<th>区切文字</th>
+								<td class="td5">
+									<select>
+										<option>カンマ</option>
+										<option></option>
+									</select>
+								</td>
+								<th>文字コード</th>
+								<td colspan="2">
+									<select class="input100">
+										<option>Unicode</option>
+										<option></option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>&emsp;</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="outputBody-right">
+
+				<button type="submit" class="btn"><img src="./images/exeBtn.png"><span class="exeBtn">実行</span></button>
+
+			</div>
+
+		</div>
+
+	</div><!-- /container -->
+
+	<%- include('./footer') %>
+</body>
+
+</html>

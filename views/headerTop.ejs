@@ -1,0 +1,23 @@
+<header>
+	<div class="border"></div>
+	<div class="topMenu">
+		<div class="kaisyaSelect">
+			<img src="./images/company.png"><span>会社選択</span>
+			<select name="kaisya" id="">
+				<% for(var i in content ) {%>
+				<% var obj = content[i].attributes; %>
+				<option value="<%= obj.classCode %>"><%= obj.companyName %></option>
+				<% } %>
+			</select>
+		</div><!-- /kaisyaSelect -->
+		<div class="topMenuBar">
+			<div>メニュー設定(S)</div>
+			<div>サポートページ(W)</div>
+			<div>バージョン情報(V)</div>
+			<div id="logoutBtn">終了(X)</div>
+		</div><!-- /topMenuBar -->
+	</div><!-- /topMenu -->
+	<!-- ログアウト -->
+	<form method="POST" action="./logout" name="logoutForm"></form>
+	<!-- ログアウト -->
+</header>

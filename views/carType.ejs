@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+    <link type="text/css" rel="stylesheet" href="./stylesheets/sanitize.css">
+    <link type="text/css" rel="stylesheet" href="./stylesheets/style.css">
+    <script src="./js/menuBar.js"></script>
+</head>
+
+<body class="body">
+    <%- include('./header') %>
+
+        <div class="container">
+
+            <div class="blank"></div>
+
+            <div class="blueBox flex">
+
+                <div class="block">
+                    <div class="dottedBox">
+                        <div class="dottedBoxTitle">登録済データの表示</div>
+
+                        <label class="dottedBoxLabel">
+                        <input type="radio" id="" name="drone" value="1" class="dottedBoxRadio" checked>
+                        <span class="dottedBoxText">表示あり</span>
+                    </label>
+
+                        <label class="dottedBoxLabel">
+                        <input type="radio" id="" name="drone" value="2" class="dottedBoxRadio">
+                        <span class="dottedBoxText">表示なし(追加モード)</span>
+                    </label>
+                    </div>
+                    <!-- dottedBox end -->
+
+                    <div class="blank"></div>
+
+                    <div class="dottedBox">
+                        <div class="dottedBoxTitle">車種コード</div>
+                        <table class="tableSet">
+                            <tr>
+                                <td>
+                                    <label for="check1" class="checkBox">
+                                        <input type="checkbox" name="listAll" id="listAll" value="1" checked="checked"><span>全件</span>
+                                </label>
+                                    <input class="input2-3" type="text" id="">
+                                    <select>
+                                        <option value="0">から</option>
+                                        <option value="1">aaaaaaa</option>
+                                    </select>
+                                    <input class="input2-3" type="text" id="">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- dottedBox end -->
+                </div>
+
+                <button type="submit" class="btn mtAuto"><img src="./images/arrow.png"></button>
+
+
+            </div>
+            <!-- blueBox end -->
+
+            <div class="listTableBox">
+
+                <table class="listTable">
+                    <tr>
+                        <th></th>
+                        <th>車種コード</th>
+                        <th>車種名</th>
+                        <th>車種名索引</th>
+                        <th>マスター検索表示区分</th>
+                    </tr>
+
+                    <% for(var i in content ) {%>
+                    <% var obj = content[i].attributes; %>
+
+                        <tr>
+                            <td></td>
+                            <td><%= obj.typeCode %></td>
+                            <td><%= obj.name %></td>
+                            <td class="bg-white"><%= obj.index %></td>
+                            <td class="bg-white"><%= obj.searchFlag %></td>
+                        </tr>
+
+                    <% } %>
+
+                    <tr>
+                        <td>新規</td>
+                        <td class="activeTd td10"><input type="text" name="typeCode"></td>
+                        <td class="activeTd td15"><input type="text" name="name"></td>
+                        <td class="activeTd td10"><input type="text" name="index"></td>
+                        <td class="activeTd td15"><input type="text" name="searchFlag"></td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <!-- listTableBox end -->
+
+            <div class="right">
+                <button type="submit" class="btn"><img src="./images/exeBtn.png"><span class="exeBtn">実行</span></button>
+            </div>
+
+
+        </div>
+        <!-- container end -->
+
+
+        <%- include('./footer') %>
+</body>
+
+</html>

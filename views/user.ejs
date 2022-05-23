@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<link type="text/css" rel="stylesheet" href="./stylesheets/sanitize.css">
+	<link type="text/css" rel="stylesheet" href="./stylesheets/style.css">
+	<script src="./js/menuBar.js"></script>
+</head>
+
+<body class="body">
+	<%- include('./header') %>
+
+	<div class="container">
+
+		<div class="blank"></div>
+
+		<div class="blueBox">
+
+			<div class="dottedBox">
+				<div class="dottedBoxTitle">登録済データの表示</div>
+
+				<label class="dottedBoxLabel">
+					<input type="radio" id="" name="drone" value="1" class="dottedBoxRadio" checked>
+					<span class="dottedBoxText">表示あり</span>
+				</label>
+
+				<label class="dottedBoxLabel">
+					<input type="radio" id="" name="drone" value="2" class="dottedBoxRadio">
+					<span class="dottedBoxText">表示なし(追加モード)</span>
+				</label>
+			</div><!-- dottedBox end -->
+
+			<div class="blank"></div>
+
+			<div class="dottedBox">
+				<div class="dottedBoxTitle">文字列の指定</div>
+				<table class="tableSet">
+					<tr>
+						<th>
+							ログインユーザー
+						</th>
+						<td>
+							<form class="flex" name="search" method="POST" action="./user">
+								<input type="text" name="index">
+								<select name="searchOption">
+									<option value="0">を含む</option>
+									<option value="1">から始まる</option>
+									<option value="2">で終わる</option>
+								</select>
+								<button type="submit" class="btn"><img src="./images/arrow.png"></button>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</div><!-- dottedBox end -->
+
+		</div><!-- blueBox end -->
+
+		<div class="listTableBox">
+
+			<table class="listTable">
+				<tr>
+					<th>コード</th>
+					<th>ユーザーID</th>
+					<th>ユーザー名</th>
+					<th>索引</th>
+					<th>営業所コード</th>
+					<th>営業所名</th>
+					<th>金庫営業所コード</th>
+					<th>金庫営業所名</th>
+					<th>管理</th>
+					<th>受付</th>
+					<th>配車</th>
+					<th>仕切</th>
+					<th>支払</th>
+					<th>ドライバー</th>
+				</tr>
+
+				<% for(var i in content ) {%>
+				<% var obj = content[i].attributes; %>
+
+				<tr>
+					<td><%= obj.code %></td>
+					<td><%= obj.userId %></td>
+					<td><%= obj.userName %></td>
+					<td><%= obj.userIndex %></td>
+					<td><%= obj.officeCode %></td>
+					<td class="bg-white"><%= obj.officeName %></td>
+					<td class="bg-white"><%= obj.safeOfficeCode %></td>
+					<td class="bg-white"><%= obj.officeName %></td>
+					<td><input type="checkbox" name="adminFlag" id="adminFlag<%= i %>" <% if(obj.adminFlag == 1) {%>
+							<%= 'checked' %> <%} %>><label for="adminFlag<%= i %>"></label></td>
+					<td><input type="checkbox" name="uketukeFlag" id="uketukeFlag<%= i %>"
+							<% if(obj.uketukeFlag == 1) {%> <%= 'checked' %> <%} %>><label
+							for="uketukeFlag<%= i %>"></label></td>
+					<td><input type="checkbox" name="haisyaFlag" id="haisyaFlag<%= i %>" <% if(obj.haisyaFlag == 1) {%>
+							<%= 'checked' %> <%} %>><label for="haisyaFlag<%= i %>"></label></td>
+					<td><input type="checkbox" name="sikiriFlag" id="sikiriFlag<%= i %>" <% if(obj.sikiriFlag == 1) {%>
+							<%= 'checked' %> <%} %>><label for="sikiriFlag<%= i %>"></label></td>
+					<td><input type="checkbox" name="siharaiFlag" id="siharaiFlag<%= i %>"
+							<% if(obj.siharaiFlag == 1) {%> <%= 'checked' %> <%} %>><label
+							for="siharaiFlag<%= i %>"></label></td>
+					<td><input type="checkbox" name="driverFlag" id="driverFlag<%= i %>" <% if(obj.driverFlag == 1) {%>
+							<%= 'checked' %> <%} %>><label for="driverFlag<%= i %>"></label></td>
+				</tr>
+
+				<% } %>
+
+				<tr>
+					<td>新規</td>
+					<td class="activeTd"><input type="text" name="userId"></td>
+					<td class="activeTd"><input type="text" name="userName"></td>
+					<td class="activeTd"><input type="text" name="userIndex"></td>
+					<td class="activeTd td10"><input type="text" name="officeCode"></td>
+					<td class="td10 bg-white"></td>
+					<td class="activeTd td10 bg-white"><input type="text" name="safeOfficeCode"></td>
+					<td class="td10 bg-white"></td>
+					<td><input type="checkbox" name="adminFlag" id="adminFlag"><label for="adminFlag"></label></td>
+					<td><input type="checkbox" name="uketukeFlag" id="uketukeFlag"><label for="uketukeFlag"></label>
+					</td>
+					<td><input type="checkbox" name="haisyaFlag" id="haisyaFlag"><label for="haisyaFlag"></label></td>
+					<td><input type="checkbox" name="sikiriFlag" id="sikiriFlag"><label for="sikiriFlag"></label></td>
+					<td><input type="checkbox" name="siharaiFlag" id="siharaiFlag"><label for="siharaiFlag"></label>
+					</td>
+					<td><input type="checkbox" name="driverFlag" id="driverFlag"><label for="driverFlag"></label></td>
+				</tr>
+			</table>
+
+		</div><!-- listTableBox end -->
+
+		<div class="right">
+			<button type="submit" class="btn"><img src="./images/exeBtn.png"><span class="exeBtn">実行</span></button>
+		</div>
+
+
+	</div><!-- container end -->
+
+
+	<%- include('./footer') %>
+</body>
+
+</html>

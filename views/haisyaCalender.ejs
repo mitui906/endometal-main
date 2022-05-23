@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>配車業務 - 配車処理 - カレンダー</title>
+	<link type="text/css" rel="stylesheet" href="./stylesheets/sanitize.css">
+	<link type="text/css" rel="stylesheet" href="./stylesheets/style.css">
+	<script src="./js/menuBar.js"></script>
+	<script src="./js/calendar.js"></script>
+
+</head>
+
+<body class="body">
+	<%- include('./header') %>
+
+	<div class="mainwrapper">
+
+		<div class="calender-left">
+
+			<p>2022年</p>
+			<h1>4月</h1>
+			<select>
+				<option>-- 選択 --</option>
+				<option>-- 1 --</option>
+				<option>-- 2 --</option>
+			</select>
+
+			<div class="calenderMonthSet flex">
+				<img src="./images/triangle-left.png"><span class="calenderMonth">3月</span>
+			</div>
+
+		</div><!-- /calender-left -->
+
+		<div class="calender-center" id="20220517">
+
+			<form name="jumpHaisyaForm" method="GET" action="./haisya">
+				<input type="hidden" name="selectDateParam" value="パラメーター">
+			</form>
+
+		</div><!-- /calender-center -->
+
+		<div class="calender-right">
+
+			<div class="calenderMonthSet flex">
+				<span class="calenderMonth">5月</span><img src="./images/triangle-right.png">
+			</div>
+
+		</div><!-- /calender-right -->
+
+	</div><!-- /mainwrapper -->
+
+	<%- include('./footer') %>
+</body>
+
+</html>
